@@ -1,0 +1,136 @@
+
+## 📥 Full Installation and Usage Guide for `youtube_downloader`
+
+---
+
+### 🛠️ Prerequisites
+
+Make sure you have the following installed:
+
+* ✅ Python 3.7 or above
+* ✅ `pip` (Python package installer)
+* ✅ Git (optional, for cloning)
+* ✅ FFmpeg (required for MP3 audio conversion)
+
+---
+
+### 🧱 Step 1: Clone the Repository
+
+If you have Git installed:
+
+```bash
+git clone https://github.com/youtube_downloader/youtube_downloader.git
+cd youtube_downloader
+```
+
+Or download the ZIP from GitHub and extract it.
+
+---
+
+### 📦 Step 2: Create Virtual Environment (Recommended)
+
+```bash
+python -m venv venv
+venv\Scripts\activate  # On Windows
+# or
+source venv/bin/activate  # On macOS/Linux
+```
+
+---
+
+### 📦 Step 3: Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+This will install:
+
+* `Flask` (web framework)
+* `yt-dlp` (YouTube downloader library)
+
+---
+
+### 🧰 Step 4: Install FFmpeg
+
+**FFmpeg is required for MP3 conversion.**
+
+#### 🔧 Windows:
+
+1. Download FFmpeg ZIP:
+   [https://www.gyan.dev/ffmpeg/builds/](https://www.gyan.dev/ffmpeg/builds/)
+
+2. Extract to: `C:\ffmpeg`
+
+3. Add `C:\ffmpeg\bin` to your **system PATH**:
+
+   * Search “Environment Variables”
+   * Edit `Path` → Add new entry: `C:\ffmpeg\bin`
+
+4. Test:
+
+```bash
+ffmpeg -version
+```
+
+You should see version info if successful.
+
+#### 🔧 macOS:
+
+```bash
+brew install ffmpeg
+```
+
+#### 🔧 Ubuntu/Linux:
+
+```bash
+sudo apt update
+sudo apt install ffmpeg
+```
+
+---
+
+### 🚀 Step 5: Run the App
+
+```bash
+python app.py
+```
+
+The server will start at:
+
+```
+http://127.0.0.1:5000
+```
+
+---
+
+### 🌐 How to Use
+
+1. Open the app in your browser.
+2. Paste a valid YouTube URL.
+3. Select the desired download format:
+
+   * 1080p / 720p / 480p (video)
+   * MP3 (audio only)
+4. Click **Download**
+5. The file will download directly to your device.
+
+---
+
+### ✅ Optional: Deactivate Virtual Environment
+
+After you're done:
+
+```bash
+deactivate
+```
+
+---
+
+### 💬 Support
+
+For questions or issues, create an [issue](https://github.com/youtube_downloader/youtube_downloader/issues) on the repository.
+
+---
+
+Let me know if you'd also like a `LICENSE.txt`, `.gitignore`, or to package this whole project as a downloadable `.zip`.
