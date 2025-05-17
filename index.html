@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YouTube Downloader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Style -->
+    <style>
+        body {
+            background-color: #f9f9f9;
+            font-family: 'Roboto', sans-serif;
+        }
+        .navbar {
+            background-color: #FF0000;
+        }
+        .navbar-brand {
+            color: #fff !important;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .card {
+            max-width: 600px;
+            margin: 60px auto;
+            border: none;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .btn-primary {
+            background-color: #FF0000;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #cc0000;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #888;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/">YouTube Downloader</a>
+        </div>
+    </nav>
+
+    <!-- Downloader Card -->
+    <div class="card p-4">
+        <h4 class="mb-3 text-center">Download YouTube Videos & Audio</h4>
+        <form method="POST">
+            <div class="mb-3">
+                <label for="url" class="form-label">YouTube Video URL</label>
+                <input type="text" class="form-control" id="url" name="url" placeholder="https://www.youtube.com/watch?v=..." required>
+            </div>
+            <div class="mb-3">
+                <label for="quality" class="form-label">Select Quality</label>
+                <select class="form-select" id="quality" name="quality" required>
+                    {% for option in options %}
+                        <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Download</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 YouTube Downloader | shayon
+    </footer>
+
+</body>
+</html>
